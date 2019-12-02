@@ -1,0 +1,13 @@
+{
+  "name": "@alloc/types",
+  "version": "1.0.0",
+  "main": "types.d.ts",
+  "files": [
+    "*.d.ts"
+  ],
+  "devDependencies": {
+    "@types/react": "^16.9.14",
+    "prettier": "^1.19.1",
+    "typescript": "^3.6.0"
+  }
+}
