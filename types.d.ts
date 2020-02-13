@@ -1,6 +1,6 @@
 export * from './react'
 
-/** For solving generic types */
+/** @deprecated For solving generic types */
 export type Solve<T> = T
 
 /** Try to simplify `&` out of an object type */
