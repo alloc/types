@@ -29,3 +29,7 @@ export type MergeDefaults<T extends object, U extends Partial<T>> = Remap<
 export type Falsy = false | null | undefined | 0 | ''
 
 export type StaticProps<T> = Omit<T, keyof T & 'prototype'>
+
+export interface UniformProps<T = any> {
+  [key: string]: T
+}
