@@ -18,7 +18,7 @@ export type Partial<T> = {} & {
   [P in keyof T]?: T[P] | undefined
 }
 
-export type Overwrite<T, U> = Solve<U & Omit<T, keyof U>>
+export type Overwrite<T, U> = Remap<Omit<T, keyof U> & U>
 
 export type MergeUnknown<T, U> = Solve<T & Omit<U, keyof T>>
 
