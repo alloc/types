@@ -1,4 +1,4 @@
-import React, { MutableRefObject } from 'react'
+import React, { ReactElement, MutableRefObject } from 'react'
 
 export type RefProp<T> = MutableRefObject<T | null | undefined>
 
@@ -9,7 +9,7 @@ export type ElementType<P = any> =
 
 // Function component without children
 type LeafFunctionComponent<P> = {
-  (props: P): React.ReactElement | null
+  (props: P): ReactElement | null
   displayName?: string
 }
 
