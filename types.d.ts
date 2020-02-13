@@ -33,3 +33,5 @@ export type StaticProps<T> = Omit<T, keyof T & 'prototype'>
 export interface UniformProps<T = any> {
   [key: string]: T
 }
+
+export interface UnknownProps extends UniformProps<unknown> {}
