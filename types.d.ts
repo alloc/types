@@ -20,7 +20,7 @@ export type Partial<T> = {} & {
 
 export type Overwrite<T, U> = Remap<Omit<T, keyof U> & U>
 
-export type MergeUnknown<T, U> = Solve<T & Omit<U, keyof T>>
+export type MergeUnknown<T, U> = Remap<T & Omit<U, keyof T>>
 
 export type MergeDefaults<T extends object, U extends Partial<T>> = Remap<
   Pick<T, Exclude<keyof T, keyof U>> &
