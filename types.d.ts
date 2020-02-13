@@ -35,3 +35,8 @@ export interface UniformProps<T = any> {
 }
 
 export interface UnknownProps extends UniformProps<unknown> {}
+
+/** Use `[T] extends [Any]` to know if a type parameter is `any` */
+export class Any {
+  private _: never
+}
