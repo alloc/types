@@ -4,7 +4,9 @@ export * from './react'
 export type Solve<T> = T
 
 /** Try to simplify `&` out of an object type */
-export type Remap<T> = { [P in keyof T]: T[P] }
+export type Remap<T> = {} & {
+  [P in keyof T]: T[P]
+}
 
 export type Pick<T, K extends keyof T> = Solve<{ [P in K]: T[P] }>
 
