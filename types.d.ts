@@ -8,7 +8,9 @@ export type Remap<T> = {} & {
   [P in keyof T]: T[P]
 }
 
-export type Pick<T, K extends keyof T> = Solve<{ [P in K]: T[P] }>
+export type Pick<T, K extends keyof T> = {} & {
+  [P in K]: T[P]
+}
 
 export type Partial<T> = Solve<{ [P in keyof T]?: T[P] | undefined }>
 
