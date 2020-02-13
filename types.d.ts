@@ -12,6 +12,8 @@ export type Pick<T, K extends keyof T> = {} & {
   [P in K]: T[P]
 }
 
+export type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
+
 export type Partial<T> = Solve<{ [P in keyof T]?: T[P] | undefined }>
 
 export type Overwrite<T, U> = Solve<U & Omit<T, keyof U>>
