@@ -25,3 +25,5 @@ export type MergeUnknown<T, U> = Remap<T & Omit<U, keyof T>>
 export type MergeDefaults<T extends object, U extends Partial<T>> = Remap<
   Omit<T, keyof U> & Partial<Pick<T, Extract<keyof U, keyof T>>>
 >
+
+export type Falsy = false | null | undefined | 0 | ''
