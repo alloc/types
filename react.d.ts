@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { MutableRefObject } from 'react'
+
+export type RefProp<T> = MutableRefObject<T | null | undefined>
 
 // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34237
 export type ElementType<P = any> =
