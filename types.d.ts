@@ -39,6 +39,7 @@ export interface UniformProps<T = any> {
   [key: string]: T
 }
 
+/** Intersected with other object types to allow for unknown properties */
 export interface UnknownProps extends UniformProps<unknown> {}
 
 /** Use `[T] extends [Any]` to know if a type parameter is `any` */
