@@ -49,3 +49,6 @@ export class Any {
 export type AnyFn<In extends ReadonlyArray<any> = any[], Out = any> = (
   ...args: In
 ) => Out
+
+/** Ensure the given type is an object type */
+export type ObjectType<T> = T extends {} ? T : {}
