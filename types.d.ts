@@ -52,3 +52,21 @@ export type AnyFn<In extends ReadonlyArray<any> = any[], Out = any> = (
 
 /** Ensure the given type is an object type */
 export type ObjectType<T> = T extends {} ? T : {}
+
+/** Intersect a union of objects but merge property types with _unions_ */
+export type ObjectFromUnion<T extends object> = Remap<
+  {
+    [P in keyof Intersect<T>]: T extends infer U
+      ? P extends keyof U
+        ? U[P]
+        : never
+      : never
+  }
+>
+
+/** Convert a union to an intersection */
+type Intersect<U> = (U extends any
+? (k: U) => void
+: never) extends (k: infer I) => void
+  ? I
+  : never
