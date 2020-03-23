@@ -30,6 +30,9 @@ export type OneOrMore<T> = T | readonly T[]
 
 export type Falsy = false | null | undefined
 
+// https://github.com/microsoft/TypeScript/issues/14829#issuecomment-504042546
+export type NoInfer<T> = [T][T extends any ? 0 : never]
+
 export type StaticProps<T> = Omit<T, keyof T & 'prototype'>
 
 export interface UniformProps<T = any> {
