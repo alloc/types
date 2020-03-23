@@ -26,6 +26,8 @@ export type MergeDefaults<T extends object, U extends Partial<T>> = Remap<
   Omit<T, keyof U> & Partial<Pick<T, Extract<keyof U, keyof T>>>
 >
 
+export type OneOrMore<T> = T | readonly T[]
+
 export type Falsy = false | null | undefined
 
 export type StaticProps<T> = Omit<T, keyof T & 'prototype'>
