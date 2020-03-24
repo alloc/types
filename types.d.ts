@@ -52,7 +52,7 @@ export type AnyFn<In extends ReadonlyArray<any> = any[], Out = any> = (
 ) => Out
 
 /** Ensure the given type is an object type */
-export type ObjectType<T> = T extends {} ? T : {}
+export type ObjectType<T> = T extends object ? T : {}
 
 /** Intersect a union of objects but merge property types with _unions_ */
 export type ObjectFromUnion<T extends object> = Remap<
