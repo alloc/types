@@ -1,7 +1,7 @@
 {
   "name": "@alloc/types",
   "version": "1.2.2",
-  "main": "types.d.ts",
+  "types": "index.d.ts",
   "files": [
     "*.d.ts"
   ],
