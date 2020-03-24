@@ -35,12 +35,12 @@ export type NoInfer<T> = [T][T extends any ? 0 : never]
 
 export type StaticProps<T> = Omit<T, keyof T & 'prototype'>
 
-export interface UniformProps<T = any> {
+export interface Lookup<T = any> {
   [key: string]: T
 }
 
 /** Intersected with other object types to allow for unknown properties */
-export interface UnknownProps extends UniformProps<unknown> {}
+export interface UnknownProps extends Lookup<unknown> {}
 
 /** Use `[T] extends [Any]` to know if a type parameter is `any` */
 export class Any {
