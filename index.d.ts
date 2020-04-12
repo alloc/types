@@ -71,3 +71,12 @@ type Intersect<U> = (U extends any
 : never) extends (k: infer I) => void
   ? I
   : never
+
+export type Exclusive<T> = keyof T extends infer Keys
+  ? Keys extends infer Key
+    ? Remap<
+        { [P in Extract<keyof T, Key>]: T[P] } &
+          { [P in Exclude<keyof T, Key>]?: undefined }
+      >
+    : never
+  : never
