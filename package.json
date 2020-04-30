@@ -3,6 +3,7 @@
   "version": "1.2.3",
   "types": "index.d.ts",
   "files": [
+    "*.js",
     "*.d.ts"
   ],
   "devDependencies": {
