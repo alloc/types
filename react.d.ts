@@ -1,4 +1,5 @@
-import React, { ReactElement, MutableRefObject } from 'react'
+import * as React from 'react'
+import { ReactElement, MutableRefObject } from 'react'
 
 export type RefProp<T> = MutableRefObject<T | null | undefined>
 
