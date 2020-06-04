@@ -80,3 +80,8 @@ export type Exclusive<T> = keyof T extends infer Keys
       >
     : never
   : never
+
+/** An object that needs to be manually disposed of */
+export interface Disposable {
+  dispose(): void
+}
