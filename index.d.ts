@@ -1,6 +1,3 @@
-/** @deprecated For solving generic types */
-export type Solve<T> = T
-
 /** Try to simplify `&` out of an object type */
 export type Remap<T> = {} & {
   [P in keyof T]: T[P]
