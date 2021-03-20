@@ -1,5 +1,3 @@
-export * from './react'
-
 /** @deprecated For solving generic types */
 export type Solve<T> = T
 
