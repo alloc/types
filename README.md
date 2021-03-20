@@ -2,6 +2,11 @@
 
 Common types for TypeScript
 
+```ts
+import { Lookup } from '@alloc/types'
+import { ElementType } from '@alloc/types/react'
+```
+
 ### Basic
 
 - `Solve<T>` for solving generic types
