@@ -7,7 +7,7 @@
     "*.d.ts"
   ],
   "devDependencies": {
-    "@types/react": "^16.9.14",
+    "@types/react": "^17.0.3",
     "prettier": "^1.19.1",
     "typescript": "^3.6.0"
   },
