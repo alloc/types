@@ -61,7 +61,7 @@ export type ObjectFromUnion<T extends object> = Remap<
 >
 
 /** Convert a union to an intersection */
-type Intersect<U> = (U extends any
+export type Intersect<U> = (U extends any
 ? (k: U) => void
 : never) extends (k: infer I) => void
   ? I
