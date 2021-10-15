@@ -6,6 +6,10 @@
     "*.js",
     "*.d.ts"
   ],
+  "repository": {	
+    "type": "git",
+    "url": "https://github.com/alloc/types.git"
+  },
   "devDependencies": {
     "@types/react": "^17.0.3",
     "prettier": "^1.19.1",
