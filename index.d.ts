@@ -49,13 +49,20 @@ export type AnyFn<In extends ReadonlyArray<any> = any[], Out = any> = (
 /** Ensure the given type is an object type */
 export type ObjectType<T> = T extends object ? T : {}
 
+/** Pick keys from a union of objects */
+export type UnionPick<T, K> = Pick<
+  T extends any
+    ? Intersect<K extends keyof T ? T : { [P in K & keyof any]?: undefined }>
+    : never,
+  // @ts-ignore
+  K
+>
+
 /** Get the keys of each object type in a given union */
 export type AllKeys<T> = T extends any ? keyof T : never
 
 /** Merge all object types in a given union. Property types are unioned. */
-export type CombineObjects<T> = [AllKeys<T>] extends [infer U]
-  ? { [P in U & string]: CombineProp<T, P> }
-  : never
+export type CombineObjects<T> = UnionPick<T, AllKeys<T>>
 
 /**
  * Given a union of object types, find which ones contain the given
