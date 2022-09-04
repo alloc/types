@@ -1,6 +1,6 @@
 /** Try to simplify `&` out of an object type */
 export type Remap<T> = {} & {
-  [P in keyof T]: T[P]
+  [P in keyof Extract<T, object>]: Extract<T, object>[P]
 }
 
 export type LoosePick<T, K> = {} & {
