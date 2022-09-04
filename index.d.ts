@@ -87,11 +87,11 @@ export type Intersect<U> = (U extends any
   ? I
   : never
 
-export type Exclusive<T> = keyof T extends infer Keys
-  ? Keys extends infer Key
+export type Exclusive<T> = AllKeys<T> extends infer K
+  ? T extends any
     ? Remap<
-        { [P in Extract<keyof T, Key>]: T[P] } &
-          { [P in Exclude<keyof T, Key>]?: undefined }
+        { [P in Extract<keyof T, K>]: T[P] } &
+          { [P in Exclude<K & keyof any, keyof T>]?: undefined }
       >
     : never
   : never
