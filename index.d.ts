@@ -62,6 +62,8 @@ export type UnionPick<T, K> = Pick<
   K
 >
 
+export type StringKeys<T> = string & keyof T
+
 /** Get the keys of each object type in a given union */
 export type AllKeys<T> = T extends any ? keyof T : never
 
