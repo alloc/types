@@ -3,9 +3,7 @@ export type Remap<T> = {} & {
   [P in keyof Extract<T, object>]: Extract<T, object>[P]
 }
 
-export type LoosePick<T, K> = {} & {
-  [P in K & keyof T]: T[P]
-}
+export type LoosePick<T, K> = {} & Pick<T, K & keyof T>
 
 export type Pick<T, K extends keyof T> = {} & {
   [P in K]: T[P]
