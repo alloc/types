@@ -88,8 +88,7 @@ export type Intersect<U> = (U extends any
 export type Exclusive<T> = AllKeys<T> extends infer K
   ? T extends any
     ? Remap<
-        { [P in Extract<keyof T, K>]: T[P] } &
-          { [P in Exclude<K & keyof any, keyof T>]?: undefined }
+        LoosePick<T, K> & { [P in Exclude<K & keyof any, keyof T>]?: undefined }
       >
     : never
   : never
