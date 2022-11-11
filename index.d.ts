@@ -58,7 +58,9 @@ export type UnionPick<T, K> = Pick<
     : never,
   // @ts-ignore
   K
->
+> extends infer Result
+  ? Result & object
+  : never
 
 export type StringKeys<T> = string & keyof T
 
@@ -66,7 +68,10 @@ export type StringKeys<T> = string & keyof T
 export type AllKeys<T> = T extends any ? keyof T : never
 
 /** Merge all object types in a given union. Property types are unioned. */
-export type CombineObjects<T> = UnionPick<T, AllKeys<T>>
+// export type CombineObjects<T> = UnionPick<T, AllKeys<T>>
+export type CombineObjects<T> = UnionPick<T, AllKeys<T>> extends infer Result
+  ? Result & object
+  : never
 
 /**
  * Given a union of object types, find which ones contain the given
