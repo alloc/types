@@ -1,6 +1,6 @@
 {
   "name": "@alloc/types",
-  "version": "2.2.3",
+  "version": "2.3.0",
   "types": "index.d.ts",
   "files": [
     "*.js",
