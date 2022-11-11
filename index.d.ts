@@ -5,6 +5,8 @@ export type Remap<T> = {} & {
 
 export type LoosePick<T, K> = {} & Pick<T, K & keyof T>
 
+export type LooseAccess<T, K> = K extends keyof T ? T[K] : never
+
 export type Pick<T, K extends keyof T> = {} & {
   [P in K]: T[P]
 }
